@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>To Do App</h1>
+<div>
+    <input type="text">
+    <button onclick="addToDo(); clr()" style="background-color: rgba(47, 128, 0, 0.521);color: white;">+</button>
+</div>    
+
+<ol>
+    
+</ol>
+
+
+
+    <script>
+        function addToDo(){
+           let a = document.getElementsByTagName("input")[0].value;
+           if(a.length > 0){
+           let b = document.createElement("li");
+           let c = document.createTextNode(a);
+           let x = document.createElement("button");
+           let y = document.createTextNode("x");
+           b.appendChild(c);
+           x.appendChild(y);
+           document.getElementsByTagName("ol")[0].appendChild(b);
+           document.getElementsByTagName("ol")[0].appendChild(x);
+           x.addEventListener("click",function(){b.remove(); x.remove();})
+           }
+           else{ alert("Please type something");}
+        }
+
+        function clr(){
+            document.getElementsByTagName("input")[0].value="";
+        }
+    </script>
+</body>
+</html>
